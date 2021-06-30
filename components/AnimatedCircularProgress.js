@@ -21,7 +21,7 @@ export default class AnimatedCircularProgress extends React.PureComponent {
 
     static defaultProps = {
         backgroundColor: '#eeeeee',
-        color: '#1e88e5',
+        color: '#A1A7EC',
         startDeg: 0,
         endDeg: 360,
         radius: 100,
