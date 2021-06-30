@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, Animated, ViewPropTypes, Easing } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 // compatibility for react-native versions < 0.44
 const ViewPropTypesStyle = ViewPropTypes ? ViewPropTypes.style : View.propTypes.style;
@@ -54,10 +55,11 @@ export default class AnimatedCircularProgress extends React.PureComponent {
     renderHalf = (color, transforms = [], otherStyle = {}) => {
         const { radius } = this.props;
         return (
-            <Animated.View
+            <LinearGradient
+                colors=[color, 'red']
                 style={[
                     styles.half,
-                    { backgroundColor: color, width: radius, height: radius * 2 },
+                    { width: radius, height: radius * 2 },
                     {
                         transform: [{ translateX: radius / 2 }, ...transforms, { translateX: -radius / 2 }],
                     },
